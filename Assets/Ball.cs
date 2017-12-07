@@ -16,7 +16,8 @@ public class Ball : MonoBehaviour
 
     void Fire()
     {
-        Vector2 dir = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        float i = Random.Range(0f, 1f) > 0.5 ? 1f : -1f;
+        Vector2 dir = new Vector3(Random.Range(4f * i, 10f * i), Random.Range(-6f, 6f));
         dir = Vector2.ClampMagnitude(dir, Speed);
         rb.velocity = dir;
     }
